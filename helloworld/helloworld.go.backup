@@ -1,0 +1,30 @@
+package helloworld
+
+//this is a comment style in go
+import (
+	"encoding/json"
+	"log"
+	"net/http"
+)
+
+/*
+This is main function
+identifies the entry point of the program
+*/
+func main() {
+	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		names := r.URL.Query()["name"]
+		var name string
+		if len(names) == 1 {
+			name = names[0]
+		}
+		m := map[string]string{"name": name}
+		enc := json.NewEncoder(w)
+		goenc.Encode(m)
+	})
+
+	err := http.ListenAndServe(":3000", nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+}

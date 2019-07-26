@@ -1,0 +1,18 @@
+package main
+
+import (
+	"fmt"
+
+	"github.com/ameyrokde/webservice/models"
+)
+
+func main() {
+	fmt.Println("Startigong the function")
+
+	u := models.User{
+		ID:        2,
+		FirstName: "Amey",
+		LastName:  "Rokde",
+	}
+	fmt.Println(u)
+}
