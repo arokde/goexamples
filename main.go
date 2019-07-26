@@ -123,6 +123,7 @@ func main() {
 	default:
 		{
 			fmt.Println("Unknown method type", r.Method)
+			//add the default code block over here
 		}
 	}
 
